@@ -4,15 +4,15 @@
 
 # Site
 title: sakitam-fdd
-subtitle:
-description:
+subtitle: sakitam-fdd
+description: FDD的Blog
 author: FDD
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://sakitam-fdd.github.io
+url: https://sakitam-fdd.github.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -44,17 +44,9 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: tech
-category_map: humanity
-tag_map: resource
-
-# Server
-## Hexo uses Connect as a server
-## You can customize the logger format as defined in
-## http://www.senchalabs.org/connect/logger.html
-port: 4000
-logger: false
-logger_format:
+default_category: uncategorized
+category_map:
+tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -71,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jsample
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
