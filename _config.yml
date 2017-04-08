@@ -5,7 +5,7 @@
 # Site
 title: sakitam-fdd
 subtitle: sakitam-fdd
-description: FDD的Blog
+description: 我执意左转，你亦心如钢铁。在漫漫长旅，每个人都在孤独跋涉。
 author: FDD
 language: zh-Hans
 timezone:
@@ -64,6 +64,13 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+algolia:
+  applicationID: '9A3A4VR36K'
+  apiKey: '293aeea8e50b01874beb9c3340da2755'
+  adminApiKey: 'c014074c623e7d5814add2315ac9a3c0'
+  indexName: 'fdd'
+  chunkSize: 5000
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
