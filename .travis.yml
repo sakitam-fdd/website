@@ -1,0 +1,18 @@
+language: node_js
+branches:
+  only:
+  - master #源码分支名称
+before_install:
+- npm install -g hexo
+- npm install -g hexo-cli
+install:
+- npm install
+script:
+- hexo clean
+- hexo generate
+after_script:
+- git config --global user.name 'FDD'
+- git config --global user.email 'smileFDD@gmail.com'
+- sed -i'' "s~git@github.com/sakitam-fdd/sakitam-fdd.github.io.git~https://${github}:x-oauth-basic@github.com/sakitam-fdd/sakitam-fdd.github.io.git~" _config.yml
+after_success:
+- hexo deploy

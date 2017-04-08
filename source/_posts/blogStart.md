@@ -3,10 +3,10 @@ title: 怎样快速搭建一个博客
 date: 2017-04-08 12:11:50
 categories:
 - 前端
-- Hexo
+- hexo
 tags:
 - 前端
-- Hexo
+- hexo
 ---
 
 # 简介：
