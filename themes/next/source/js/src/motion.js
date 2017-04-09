@@ -288,4 +288,27 @@ $(document).ready(function () {
     }
   };
 
+  /**
+   * 动态抓取必应首页图片
+   * @desc 参数
+   */
+  function getImagesUrl () {
+    var base = "http://127.0.0.1:3002/";
+    var idx = parseInt(Math.random() * 10);
+    var nc = (new Date()).getTime();
+    var url = base.replace('{idx}', idx.toString()).replace('{nc}', nc.toString());
+    $.get(base, function(data, status){
+      if (data && status == 'success') {
+        data = JSON.parse(data)
+        var coverImage = "http://www.bing.com" + data['images'][0]['url'];
+        $("body").css({
+          "height": "initial",
+          "background": "url('" + coverImage + "') top left no-repeat #666666",
+          "background-image": coverImage,
+          "background-size": "cover"
+        });
+      }
+    });
+  }
+  getImagesUrl()
 });
