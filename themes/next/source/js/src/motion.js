@@ -293,11 +293,11 @@ $(document).ready(function () {
    * @desc 参数
    */
   function getImagesUrl () {
-    var base = "http://127.0.0.1:3002/";
+    var base = "http://13.124.37.254:3001/HPImageArchive.aspx?format=js&idx={idx}&n=1&nc={nc}&pid=hp&video=1";
     var idx = parseInt(Math.random() * 10);
     var nc = (new Date()).getTime();
     var url = base.replace('{idx}', idx.toString()).replace('{nc}', nc.toString());
-    $.get(base, function(data, status){
+    $.get(url, function(data, status){
       if (data && status == 'success') {
         data = JSON.parse(data)
         var coverImage = "http://www.bing.com" + data['images'][0]['url'];
