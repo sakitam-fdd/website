@@ -159,3 +159,27 @@ java version "1.8.0_152"
 Java(TM) SE Runtime Environment (build 1.8.0_152-b16)
 Java HotSpot(TM) 64-Bit Server VM (build 25.152-b16, mixed mode)
 ```
+
+# webstorm安装
+
+> 官网：http://www.jetbrains.com/webstorm/
+
+安装过程：
+
+解压
+
+tar zxvf WebStorm-2017.3.tar.gz
+移动
+
+sudo mv WebStorm-173.3727.108/ /opt/WebStorm/
+创建链接
+
+sudo ln -s /opt/WebStorm/ /opt/WebStorm
+启动
+
+/opt/WebStorm/bin/webstorm.sh
+添加Dash图标
+
+## 激活
+
+> http://www.imsxm.com/jetbrains-license-server.html
