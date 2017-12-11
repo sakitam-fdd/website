@@ -1,0 +1,49 @@
+---
+title: deepin下前端开发环境搭建
+date: 2017-12-11 19:11:50
+categories:
+- linux
+tags:
+- linux
+- nodejs
+- soft
+- git
+---
+
+# 简介：
+
+deepin下前端相关开发环境搭建，包括nodejs安装，webstorm安装，jdk安装,git安装等。
+
+<!--more-->
+
+# nodejs安装教程
+
+> 
+
+* 下载源码：https://nodejs.org/en/download/，优先选择长期支持版，选择Source Code下载
+```bash
+wget https://nodejs.org/dist/v8.9.3/node-v8.9.3.tar.gz
+```
+
+* 解压并安装
+```bash
+// 解压源码压缩包
+sudo tar xvf node-v8.9.3.tar.gz
+
+// 切换到解压后的文件夹内
+cd node-v8.9.3
+
+// 开始安装，编译大概会有20分钟之久
+sudo ./configure 
+sudo make 
+sudo make install 
+
+// 查看当前安装的Node的版本 
+node -v 
+v8.9.3
+
+// 查看NPM版本
+npm -v
+5.5.1
+```
+
