@@ -10,7 +10,8 @@ script:
 - git clone https://github.com/sakitam-fdd/hexo-theme-next.git themes/next
 - hexo clean
 - hexo generate
-- export HEXO_ALGOLIA_INDEXING_KEY={HEXO_ALGOLIA_INDEXING_KEY}
+- export HEXO_ALGOLIA_INDEXING_KEY={HEXO_ALGOLIA_KEY}
+- set HEXO_ALGOLIA_INDEXING_KEY={HEXO_ALGOLIA_KEY}
 - hexo algolia
 after_script:
 - cd ./dist
