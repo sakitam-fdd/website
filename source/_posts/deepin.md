@@ -84,6 +84,7 @@ $ apk add git
 
 # JDK环境配置
 
+```bash
 下载安装Oracle JDK
 下载JDK的tar.gz包
 
@@ -101,44 +102,63 @@ sudo mv jdk1.8.0_152/  /usr/lib/jvm/jdk1.8.0_152
 JDK环境变量配置
 修改配置文件
 sudo vim /etc/profile
+```
+
 在文件的末尾增加内容
 
+```bash
 JAVA_HOME=/usr/lib/jvm/jdk1.8.0_152
 export PATH=$JAVA_HOME/bin:$PATH 
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+```
+
 注意jdk的路径和版本
 
 使配置生效
+
+```bash
 source /etc/profile
+```
 
 
 配置默认JDK
 创建新的java版本
 在shell用update-alternatives命令创建新的系统命令链接：
 
+```bash
 sudo update-alternatives --install /usr/bin/javac javac  /usr/lib/jvm/jdk1.8.0_152/bin/javac  1171
 sudo update-alternatives --install /usr/bin/java  java  /usr/lib/jvm/jdk1.8.0_152/bin/java  1171
 sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.8.0_152/bin/jar 1171   
 sudo update-alternatives --install /usr/bin/javah javah /usr/lib/jvm/jdk1.8.0_152/bin/javah 1171   
 sudo update-alternatives --install /usr/bin/javap javap /usr/lib/jvm/jdk1.8.0_152/bin/javap 1171 
+```
+
 update-alternatives是ubuntu系统中专门维护系统命令链接符的工具，后面的1171是用来指定当前链接的优先级，最高的优先级将自动被设置为默认版本。
 
 可以用下面的命令查看JAVA的版本和优先级：
 
+```bash
 update-alternatives --display java
+```
+
 选择JAVA的版本
 执行命令
 
+```angular2html
 update-alternatives --config java
+```
+
 输出
 
  有 2 个候选项可用于替换 java (提供 /usr/bin/java)。
 
   选择       路径                                          优先级  状态
 ------------------------------------------------------------
+```bash
 * 0            /usr/lib/jvm/jdk1.8.0_152/bin/java               1171      自动模式
   1            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      手动模式
   2            /usr/lib/jvm/jdk1.8.0_152/bin/java               1171      手动模式
+```
 
 要维持当前值[*]请按<回车键>，或者键入选择的编号：
 
@@ -150,7 +170,10 @@ update-alternatives --config java
 查看JAVA版本
 在shell上执行下面命令
 
+```bash
 java -version
+```
+
 如果得到如下输出，证明JDK已经成功安装配置了。
 
 ```bash
@@ -166,6 +189,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.152-b16, mixed mode)
 
 安装过程：
 
+```bash
 解压
 
 tar zxvf WebStorm-2017.3.tar.gz
@@ -179,6 +203,7 @@ sudo ln -s /opt/WebStorm/ /opt/WebStorm
 
 /opt/WebStorm/bin/webstorm.sh
 添加Dash图标
+```
 
 ## 激活
 

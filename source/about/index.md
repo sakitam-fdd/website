@@ -6,39 +6,22 @@ type: about
 
 # 现状
 
-> * 河南理工大学2016届（电子信息工程）
-> * 百度云ROM河南区负责人（2015）
-> * 前某广告公司实习生
-> * 现北京恒达时讯前端工程师（WEBGIS工程师）
+*	两年web / GIS 开发经验，现任职webGIS开发工程师，负责公司技术研发和项目开发工作，GIS技术负责人。	
+*	熟练掌握HTML5/CSS3/JavaScript等技术，熟悉ES6语法和javascript设计模式，canvas和webgl相关知识。	
+*	熟练angualr 1.x，vue，jQuery等前端框架；熟练使用CSS 预处理器，比如scss、less等；各种前端构建工具的使用，angular项目主要使用 gulp，vue主要使用webpack，插件构建主要使用rollup，并且深入了解相关配置和插件机制。	
+*	熟练掌握nodejs，服务端渲染等，熟悉pg数据库和基本sql。	
+*	维护了部分npm包，其中HMap和ol3Echarts使用较多，现在正在深入研发GIS地图数据可视化相关。
+
+# 技能树
+
+* web开发：HTML、CSS、javascript，svg, canvas，webgl，angualr，vue，jquery, scss, sass, less, gulp, webpack, rollup, nodejs, ssr，单元测试等
+* 后台：node，了解java，nginx，tomcat，docker等
+* 硬件：51单片机，arm，FPGA，物联网设备，集成电路等
+* 其他：linux，数据库相关，GIS开发，数据可视化相关等
 
 # 兴趣
 
-> * 动漫（偏治愈向和古风，喜欢罗小黑战记，秦时明月，纳米核心。）
-> * 游戏（玩过很多，手残党）
-> * 小说（主要看武侠和玄幻类作品）
-> * 体育（会打篮球，不是很厉害）
-> * 代码（沉浸在代码中会有安静的感觉）
-> * 软件（喜欢试用各种稀奇古怪的软件和应用，欢迎推荐）
-
-# 技能
-
-## 语言类
-> * C 熟悉
-> * java 能看懂
-> * php 有涉猎
-> * html，css，js 高级
-> * node.js 初步
-
-## 框架类
-> * jquery 高级
-> * angular 熟练
-> * vue 熟练
-
-## 工具类
-> * git 熟练
-> * shell/bash 初步（目前最爱）
-> * 各类翻墙工具 熟练
-
-# 博客更新日志
-
-2017年04月8日 使用next建立博客。
+* 动漫
+* 游戏（玩过很多，手残党）
+* 小说
+* 撸码
