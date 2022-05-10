@@ -46,17 +46,17 @@ jobs:
           context: ./docker
           file: ./docker/Dockerfile
           platforms: linux/amd64
-          push: false
+          push: true
           load: false
           target: builder
           tags: ${{ secrets.DOCKER_USERNAME }}/sakitam-blog-static:latest
-          outputs: type=docker,dest=/tmp/sakitam-blog-static.tar
+#          outputs: type=docker,dest=/tmp/sakitam-blog-static.tar
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: sakitam-blog-static
-          path: /tmp/sakitam-blog-static.tar
+#      - name: Upload artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: sakitam-blog-static
+#          path: /tmp/sakitam-blog-static.tar
 
   job1:
     needs: [build-job]
@@ -84,16 +84,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: sakitam-blog-static
-          path: /tmp
-
-      - name: Load image
-        run: |
-          docker load --input /tmp/sakitam-blog-static.tar
-          docker image ls -a
+#      - name: Download artifact
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: sakitam-blog-static
+#          path: /tmp
+#
+#      - name: Load image
+#        run: |
+#          docker load --input /tmp/sakitam-blog-static.tar
+#          docker image ls -a
 
       - name: Build and push
         uses: docker/build-push-action@v3
@@ -130,17 +130,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: sakitam-blog-static
-          path: /tmp
-
-      - name: Load image
-        run: |
-          docker load --input /tmp/sakitam-blog-static.tar
-          docker image ls -a
+#
+#      - name: Download artifact
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: sakitam-blog-static
+#          path: /tmp
+#
+#      - name: Load image
+#        run: |
+#          docker load --input /tmp/sakitam-blog-static.tar
+#          docker image ls -a
 
       - name: Build and push
         uses: docker/build-push-action@v3
@@ -178,16 +178,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: sakitam-blog-static
-          path: /tmp
-
-      - name: Load image
-        run: |
-          docker load --input /tmp/sakitam-blog-static.tar
-          docker image ls -a
+#      - name: Download artifact
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: sakitam-blog-static
+#          path: /tmp
+#
+#      - name: Load image
+#        run: |
+#          docker load --input /tmp/sakitam-blog-static.tar
+#          docker image ls -a
 
       - name: Build and push
         uses: docker/build-push-action@v3
