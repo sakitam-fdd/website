@@ -2,9 +2,12 @@ FROM node:14-slim as builder
 RUN apt-get update && apt-get install -y jq curl wget python unzip
 WORKDIR /app
 
+# https://cn.arip-photo.org/170029-unzipping-files-that-are-flying-AWUNGO
 ### Get the latest release source code tarball
 RUN wget -qO- https://github.com/sakitam-fdd/website/archive/refs/heads/sakitam.zip \
-    | unzip - --strip 1
+    | busybox unzip -
+
+#RUN wget -q -O tmp.zip https://github.com/sakitam-fdd/website/archive/refs/heads/master.zip && unzip tmp.zip -d ./ && rm tmp.zip
 
 ### --network-timeout 1000000 as a workaround for slow devices
 ### when the package being installed is too large, Yarn assumes it's a network problem and throws an error
