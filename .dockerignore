@@ -1,0 +1,8 @@
+node_modules/
+.github/
+.idea/
+.vscode/
+themes/
+source/
+scaffolds/
+docker/
