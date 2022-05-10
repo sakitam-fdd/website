@@ -34,6 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm i -g yarn
+          yarn global add hexo-cli@4.3.0
           yarn
 
       - name: Configuration environment
