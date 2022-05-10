@@ -73,9 +73,8 @@ search:
   limit: 10000
 
 algolia:
-  applicationID: '9A3A4VR36K'
-  apiKey: '08355c4f2d75c648493abc91c2ecd39e'
-  adminApiKey: 'd2f55108b79fb59b8105efb3dac30603'
+  applicationID: '7HSJME72X5'
+  apiKey: 'bc7cc64b421f3c6adc942e70055bac28'
   indexName: 'sakitam-fdd'
   chunkSize: 5000
 
@@ -89,4 +88,4 @@ baidusitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/sakitam-fdd/sakitam-fdd.github.io.git
+  repo: git@github.com:sakitam-fdd/sakitam-fdd.github.io.git

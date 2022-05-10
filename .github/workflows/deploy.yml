@@ -33,9 +33,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm i -g pnpm@6.32.1
-          pnpm i hexo-cli -g
-          pnpm i
+          npm i -g yarn
+          yarn
 
       - name: Configuration environment
         env:
@@ -50,10 +49,12 @@ jobs:
           git config --global user.email $GIT_USER_EMAIL
 
       - name: Deploy hexo
-        env:
-          HEXO_ALGOLIA_INDEXING_KEY: ${{secrets.HEXO_ALGOLIA_INDEXING_KEY}}
         run: |
-          hexo clean && hexo generate && hexo algolia && hexo deploy
+          export HEXO_ALGOLIA_INDEXING_KEY=${{secrets.HEXO_ALGOLIA_INDEXING_KEY}}
+          hexo clean
+          hexo generate
+          hexo algolia
+          hexo deploy
 
       - name: Get the output
         run: |
