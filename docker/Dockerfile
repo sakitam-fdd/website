@@ -16,7 +16,6 @@ RUN yarn global add hexo-cli@4.3.0
 
 ### Separate `yarn build` layer as a workaround for devices with low RAM.
 ### If build fails due to OOM, `yarn install` layer will be already cached.
-RUN yarn build
 RUN hexo clean
 RUN hexo generate
 
