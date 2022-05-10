@@ -33,6 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm i -g pnpm@6.32.1
           pnpm i
 
       - name: Configuration environment
