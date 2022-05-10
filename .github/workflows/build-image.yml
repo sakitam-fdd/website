@@ -21,7 +21,7 @@ jobs:
 
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
         with:
           version: latest
 
@@ -39,9 +39,16 @@ jobs:
           file: ./docker/Dockerfile
           platforms: linux/amd64
           push: false
-          load: true
+          load: false
           target: builder
           tags: ${{ secrets.DOCKER_USERNAME }}/sakitam-blog-static:latest
+          outputs: type=docker,dest=/tmp/sakitam-blog-static.tar
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: sakitam-blog-static
+          path: /tmp/sakitam-blog-static.tar
 
   job1:
     needs: [build-job]
@@ -59,7 +66,7 @@ jobs:
 
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
         with:
           version: latest
 
@@ -68,6 +75,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sakitam-blog-static
+          path: /tmp
+
+      - name: Load image
+        run: |
+          docker load --input /tmp/sakitam-blog-static.tar
+          docker image ls -a
 
       - name: Build and push
         uses: docker/build-push-action@v2
@@ -95,7 +113,7 @@ jobs:
 
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
         with:
           version: latest
 
@@ -104,6 +122,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sakitam-blog-static
+          path: /tmp
+
+      - name: Load image
+        run: |
+          docker load --input /tmp/sakitam-blog-static.tar
+          docker image ls -a
 
       - name: Build and push
         uses: docker/build-push-action@v2
@@ -131,7 +160,7 @@ jobs:
 
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
         with:
           version: latest
 
@@ -140,6 +169,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sakitam-blog-static
+          path: /tmp
+
+      - name: Load image
+        run: |
+          docker load --input /tmp/sakitam-blog-static.tar
+          docker image ls -a
 
       - name: Build and push
         uses: docker/build-push-action@v2
