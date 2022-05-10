@@ -1,0 +1,58 @@
+name: Deploy
+
+env:
+  GIT_USER_NAME: sakitam-fdd
+  GIT_USER_EMAIL: smilefdd@gmail.com
+  THEME_REPO: sakitam-fdd/hexo-theme-n2
+  THEME_BRANCH: master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-job:
+    name: build static
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        node_version: [ 14.x ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Checkout Theme
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ env.THEME_REPO }}
+          ref: ${{ env.THEME_BRANCH }}
+          path: themes/next
+
+      - name: Install dependencies
+        run: |
+          pnpm i
+
+      - name: Configuration environment
+        env:
+          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh/
+          echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          git config --global user.name $GIT_USER_NAME
+          git config --global user.email $GIT_USER_EMAIL
+
+      - name: Deploy hexo
+        env:
+          HEXO_ALGOLIA_INDEXING_KEY: ${{secrets.HEXO_ALGOLIA_INDEXING_KEY}}
+        run: |
+          hexo clean && hexo generate && hexo algolia && hexo deploy
+
+      - name: Get the output
+        run: |
+          echo "${{ steps.deploy.outputs.oss }}"
