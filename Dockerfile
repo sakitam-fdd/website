@@ -21,5 +21,5 @@ RUN hexo generate
 
 ### Nginx or Apache can also be used, Caddy is just smaller in size
 FROM caddy:latest as release
-COPY ./docker/Caddyfile /etc/caddy/Caddyfile
+COPY ./Caddyfile /etc/caddy/Caddyfile
 COPY --from=builder /app/dist /usr/share/caddy
