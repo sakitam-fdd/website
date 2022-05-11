@@ -1,8 +1,11 @@
-node_modules/
 .github/
 .idea/
 .vscode/
+
+# folder
 themes/
 source/
 scaffolds/
-docker/
+
+# dep
+node_modules/
