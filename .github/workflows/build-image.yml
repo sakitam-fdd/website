@@ -38,7 +38,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          target: release
+          # target: release
           tags: ${{ secrets.DOCKER_USERNAME }}/sakitam-blog:latest-amd64
 
   job2:
@@ -73,7 +73,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/arm64
           push: true
-          target: release
+          # target: release
           tags: ${{ secrets.DOCKER_USERNAME }}/sakitam-blog:latest-arm64v8
 
   job3:
@@ -108,7 +108,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/arm/v7
           push: true
-          target: release
+          # target: release
           tags: ${{ secrets.DOCKER_USERNAME }}/sakitam-blog:latest-arm32v7
 
   job4:
