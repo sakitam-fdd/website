@@ -11,6 +11,8 @@ RUN wget -q -O tmp.zip https://github.com/sakitam-fdd/website/archive/refs/heads
 
 RUN ls -a
 
+RUN git clone https://github.com/sakitam-fdd/hexo-theme-n2.git themes/next
+
 ### --network-timeout 1000000 as a workaround for slow devices
 ### when the package being installed is too large, Yarn assumes it's a network problem and throws an error
 RUN yarn --network-timeout 1000000
@@ -19,9 +21,11 @@ RUN yarn --network-timeout 1000000
 ### If build fails due to OOM, `yarn install` layer will be already cached.
 RUN yarn generate
 
+RUN cd dist && ls -l
+
 ### Nginx or Apache can also be used, Caddy is just smaller in size
 FROM caddy:latest as release
 COPY ./Caddyfile /etc/caddy/Caddyfile
 COPY --from=builder /app/dist /usr/share/caddy
 
-EXPOSE 1080
+EXPOSE 80 443
