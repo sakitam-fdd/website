@@ -1,5 +1,5 @@
 FROM node:14-slim as builder
-RUN apt-get update && apt-get install -y jq curl wget python unzip
+RUN apt-get update && apt-get install -y jq curl wget python unzip git
 WORKDIR /app
 
 # https://cn.arip-photo.org/170029-unzipping-files-that-are-flying-AWUNGO
