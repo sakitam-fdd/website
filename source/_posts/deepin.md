@@ -17,7 +17,6 @@ deepin下前端相关开发环境搭建，包括nodejs安装，webstorm安装，
 <!--more-->
 
 # nodejs安装教程
-
 > 
 
 * 下载源码：https://nodejs.org/en/download/，优先选择长期支持版，选择Source Code下载
